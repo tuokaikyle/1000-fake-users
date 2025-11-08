@@ -1,4 +1,4 @@
-# 1000-fake-person
+# 1000-fake-users
 
 Need to create testing users for your project?  
 Put these 1000 or even more fake users into it.   
@@ -17,13 +17,15 @@ bun install
 To run:
 
 ```bash
-bun run src/index.ts // to produce 1000-fake-person.csv
-bun run src/usa.ts // to produce 1000-fake-person-usa.csv
-bun run src/china.ts // to produce 1000-fake-person-china.csv
+bun run src/index.ts // to produce 1000-fake-users.csv
+bun run src/usa.ts // to produce 1000-fake-users-usa.csv
+bun run src/china.ts // to produce 1000-fake-users-china.csv
 ```
 
 
-## 1000-fake-person
+## 1000-fake-users
+
+The base structure. 
 
 | Attributes      | Description |
 | ----------- | ----------- |
@@ -44,9 +46,9 @@ bun run src/china.ts // to produce 1000-fake-person-china.csv
 | zodiacSign | computed from dob|
 
 
-## 1000-fake-person-usa
+## 1000-fake-users-usa
 
-Different from *1000-fake-person* in the following:  
+Different from *1000-fake-users* in the following:  
   
 firstname - has firstname  
 lastname - has lastname  
@@ -58,12 +60,13 @@ height - foot
 weight - pound  
 
 
-## 1000-fake-person-China
-Todo  
-can tell sex  
-省市  
-const location = fakerZH_CN.location.state()  
-const fromLocation = fakerZH_CN.location.state()  
+## 1000-fake-users-china
+
+Different from *1000-fake-users* in the following:  
+
+username - 汉字, can tell sex  
+fromLocation - 包含港澳台地区  
+currentLocation - 包含港澳台地区  
 
 ## Considerations
 
