@@ -1,7 +1,6 @@
 # 1000-fake-users
 
-Need to create testing users for your project?  
-Put these 1000 or even more fake users into it.   
+Put these 1000 or even more fake users into a db to test your starter project.   
 You can easily add or modify the attributes.  
 Uses Faker.js.
 Use weighted values and normal distribution algorithm to generate realistic data.  
@@ -25,7 +24,7 @@ bun run src/china.ts // to produce 1000-fake-users-china.csv
 
 ## 1000-fake-users
 
-The base structure. 
+The universal file without being localized.
 
 | Attributes      | Description |
 | ----------- | ----------- |
@@ -48,7 +47,7 @@ The base structure.
 
 ## 1000-fake-users-usa
 
-Different from *1000-fake-users* in the following:  
+Localized, different from *1000-fake-users* in the following:  
   
 firstname - has firstname  
 lastname - has lastname  
@@ -62,7 +61,7 @@ weight - pound
 
 ## 1000-fake-users-china
 
-Different from *1000-fake-users* in the following:  
+Localized, different from *1000-fake-users* in the following:  
 
 username - 汉字, can tell sex  
 fromLocation - 包含港澳台地区，部分海外地区  
