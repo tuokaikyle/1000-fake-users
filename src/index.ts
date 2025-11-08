@@ -9,7 +9,7 @@ function createRandomUser(): User {
 	const username = faker.person.firstName(sex) // allow duplidates, can tell sex
 	const password = faker.internet.password()
 	const dob = faker.date.birthdate({ mode: 'year', min: 1980, max: 2005 }).toISOString().split('T')[0] as string
-	const email = faker.internet.email() // duplicates?
+	const email = faker.internet.email() // unrelated to names, can have duplicates
 	// faker.helpers.uniqueArray(faker.internet.email, 1000); // no duplicates
 
 	const currentLocation = faker.location.country()
