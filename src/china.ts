@@ -1,12 +1,12 @@
 import { fakerZH_CN as faker } from '@faker-js/faker'
-import { bloodTypeWeighted, MBTI_TYPES, relationshipStatusWeighted, type User } from './types'
+import { bloodTypeWeighted, chinaRelatedCountries, MBTI_TYPES, relationshipStatusWeighted, type User } from './types'
 import { getNormalDistributionData, getZodiacSign } from './utils'
 import fs from 'fs'
 import Papa from 'papaparse'
 
 function createRandomUser(): User {
 	const sex = faker.person.sexType()
-	const username = faker.person.firstName(sex) // allow duplidates, can tell sex
+	const username = faker.person.lastName()
 	const password = faker.internet.password()
 	const dob = faker.date.birthdate({ mode: 'year', min: 1980, max: 2005 }).toISOString().split('T')[0] as string
 	const email = faker.internet.email() // unrelated to names, can have duplicates
@@ -14,12 +14,14 @@ function createRandomUser(): User {
 
 	const fromLocation = faker.helpers.weightedArrayElement([
 		{ weight: 90, value: faker.location.state() },
-		{ weight: 10, value: faker.helpers.arrayElement(['香港特别行政区', '澳门特别行政区', '台湾地区']) },
+		{ weight: 5, value: faker.helpers.arrayElement(['香港特别行政区', '澳门特别行政区', '台湾地区']) },
+		{ weight: 5, value: faker.helpers.weightedArrayElement(chinaRelatedCountries) },
 	])
 
 	const currentLocation = faker.helpers.weightedArrayElement([
-		{ weight: 90, value: faker.location.state() },
+		{ weight: 70, value: faker.location.state() },
 		{ weight: 10, value: faker.helpers.arrayElement(['香港特别行政区', '澳门特别行政区', '台湾地区']) },
+		{ weight: 20, value: faker.helpers.weightedArrayElement(chinaRelatedCountries) },
 	])
 
 	const jobTitle = faker.person.jobTitle()
