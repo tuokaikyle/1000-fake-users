@@ -25,7 +25,7 @@ export const getNormalDistributionData = (
 		weight = Math.max(50, Math.min(130, weight))
 	} else {
 		// Female: mean height 162cm, std dev 6cm
-		height = Math.round(generateNormal(162, 6))
+		height = Math.round(generateNormal(165, 6))
 		height = Math.max(145, Math.min(185, height))
 
 		// Female: mean weight 65kg, std dev 11kg
