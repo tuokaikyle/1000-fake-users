@@ -65,8 +65,8 @@ weight - pound
 Different from *1000-fake-users* in the following:  
 
 username - 汉字, can tell sex  
-fromLocation - 包含港澳台地区  
-currentLocation - 包含港澳台地区  
+fromLocation - 包含港澳台地区，部分海外地区  
+currentLocation - 包含港澳台地区，部分海外地区  
 
 ## Considerations
 
@@ -102,4 +102,5 @@ const gender = faker.helpers.weightedArrayElement([
 ## Issues:
 emails can have duplicates  
 add empty values
-relationshipStatus even in readme
+中文用户名方案 - 汉字英文混合？
+海外地区方案 包含所有国家？

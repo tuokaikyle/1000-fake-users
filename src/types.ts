@@ -29,6 +29,20 @@ export const bloodTypeWeighted = [
 export type BloodType = (typeof bloodTypeWeighted)[number]['value']
 // const bloodType = bloodTypeWeighted.map((b) => b.value);
 
+export const chinaRelatedCountries = [
+	{ value: '美国', weight: 20 },
+	{ value: '英国', weight: 10 },
+	{ value: '澳大利亚', weight: 10 },
+	{ value: '加拿大', weight: 10 },
+
+	{ value: '新西兰', weight: 10 },
+	{ value: '德国', weight: 10 },
+	{ value: '法国', weight: 10 },
+	{ value: '法国', weight: 10 },
+	{ value: '阿根廷', weight: 5 },
+	{ value: '肯尼亚', weight: 5 },
+]
+
 export interface User {
 	_id: string
 	email: string
