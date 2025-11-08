@@ -15,7 +15,6 @@ export const relationshipStatusWeighted = [
 	{ value: 'Widowed', weight: 5 },
 ] as const
 export type RelationshipStatus = (typeof relationshipStatusWeighted)[number]['value']
-// const relationshipStatus = relationshipStatusWeighted.map((b) => b.value);
 
 export const bloodTypeWeighted = [
 	{ value: 'O+', weight: 35 },
@@ -35,15 +34,19 @@ export interface User {
 	email: string
 	password: string
 
-	username: string
-	sex: SexType
-	dob: string // Format: yyyy-mm-dd
+	username?: string
+	firstName?: string
+	lastName?: string
 
-	height?: number // in centimeters
-	weight?: number // in kilograms
+	sex?: SexType
+	gender?: string
+	dob: string
+
+	height?: number | string
+	weight?: number | string
 
 	currentLocation: string
-	fromLocation: string
+	fromLocation?: string
 
 	jobTitle?: string
 

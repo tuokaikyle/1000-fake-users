@@ -8,9 +8,12 @@ export const generateNormal = (mean: number, stdDev: number): number => {
 	return mean + z * stdDev
 }
 
-export const getNormalDistributionData = (sex: SexType): { height: number; weight: number } => {
-	let height: number
-	let weight: number
+export const getNormalDistributionData = (
+	sex: SexType,
+	usa?: boolean,
+): { height: number | string; weight: number | string } => {
+	let height: number | string
+	let weight: number | string
 
 	if (sex === 'male') {
 		// Male: mean height 175cm, std dev 7cm
@@ -30,6 +33,11 @@ export const getNormalDistributionData = (sex: SexType): { height: number; weigh
 		weight = Math.max(40, Math.min(110, weight))
 	}
 
+	if (usa) {
+		height = cmToFeetString(height)
+		weight = kgToPounds(weight)
+	}
+
 	return {
 		height,
 		weight,
@@ -37,11 +45,15 @@ export const getNormalDistributionData = (sex: SexType): { height: number; weigh
 }
 
 export const getZodiacSign = (dateStr: string): ZodiacSign => {
-	const [_, month, day] = dateStr.split('-').map(Number)
+	const date = new Date(dateStr)
 
-	if (!month || !day) {
+	// Check if date is valid
+	if (isNaN(date.getTime())) {
 		throw new Error('Invalid date format')
 	}
+
+	const month = date.getMonth() + 1 // getMonth() is 0-indexed
+	const day = date.getDate()
 
 	if ((month === 3 && day >= 21) || (month === 4 && day <= 19)) return 'Aries'
 	if ((month === 4 && day >= 20) || (month === 5 && day <= 20)) return 'Taurus'
@@ -54,5 +66,17 @@ export const getZodiacSign = (dateStr: string): ZodiacSign => {
 	if ((month === 11 && day >= 22) || (month === 12 && day <= 21)) return 'Sagittarius'
 	if ((month === 12 && day >= 22) || (month === 1 && day <= 19)) return 'Capricorn'
 	if ((month === 1 && day >= 20) || (month === 2 && day <= 18)) return 'Aquarius'
-	return 'Pisces' // Feb 19 - Mar 20
+	return 'Pisces'
+}
+
+export function cmToFeetString(cm: number): string {
+	const totalInches = cm / 2.54
+	const feet = Math.floor(totalInches / 12)
+	const inches = Math.round(totalInches % 12)
+
+	return `${feet}'${inches}"`
+}
+
+export function kgToPounds(kg: number): number {
+	return Math.round(kg * 2.20462)
 }
