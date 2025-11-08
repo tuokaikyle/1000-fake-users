@@ -2,8 +2,8 @@
 
 Put these 1000 or even more fake users into a db to test your starter project.   
 You can easily add or modify the attributes.  
-Uses Faker.js.
-Use weighted values and normal distribution algorithm to generate realistic data.  
+Uses Faker.js.  
+Uses weighted values and normal distribution algorithm to generate realistic data.  
 
 ## How to run
 
