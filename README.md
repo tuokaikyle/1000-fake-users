@@ -9,7 +9,7 @@ bun install
 To run:
 
 ```bash
-bun run index.ts
+bun run src/index.ts
 ```
 
 This project was created using `bun init` in bun v1.3.1. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
@@ -28,8 +28,8 @@ no empty value
 | username | fn only, can tell sex, allow duplidates|
 | sex | two values, male and female|
 | dob | yyyy-mm-dd, has range, but no normalization|
-| height | cm, with normal distribution|
-| weight | kg, with normal distribution|
+| height | cm, with normal distribution, related to sex|
+| weight | kg, with normal distribution, related to sex|
 | currentLocation | countries|
 | fromLocation | countries|
 | jobTitle | random|
@@ -54,16 +54,7 @@ const fromLocation = fakerZH_CN.location.state()
 
 
 ## 1000-fake-person-US
- can tell sex
+can tell sex
 fn can tell sex, ln
 3 sexes 
 us states
-
-
-改名字
-1000-fake-users
-
-remote repo
-package.json
-local folder name
-csv

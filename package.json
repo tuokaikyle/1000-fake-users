@@ -1,5 +1,5 @@
 {
-  "name": "1000-fake-person",
+  "name": "1000-fake-users",
   "module": "index.ts",
   "type": "module",
   "private": true,
