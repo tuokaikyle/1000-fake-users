@@ -98,12 +98,13 @@ const gender = faker.helpers.weightedArrayElement([
 ])
 ```
 
-## Issues:
-emails can have duplicates  
+## Todos:
+us, china emails can have duplicates  
 add empty values
 中文用户名方案 - 汉字英文混合？
 海外地区方案 包含所有国家？
 re arrange column order
+add test
 
 
 ## Change logs
@@ -118,4 +119,3 @@ email
 email unique 问题：跟username不合拍
 email unique + username 从email中来 问题：username跟性别不一致
 email uuid 问题：不完全unique - 检查
-email unique 制作唯一前缀替换名字前缀

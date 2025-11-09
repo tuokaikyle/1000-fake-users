@@ -80,3 +80,35 @@ export function cmToFeetString(cm: number): string {
 export function kgToPounds(kg: number): number {
 	return Math.round(kg * 2.20462)
 }
+
+export function addPrefixToDuplicateEmails<T extends { email: string }>(users: T[]): T[] {
+	const emailCount = new Map<string, number>()
+
+	return users.map((user) => {
+		const email = user.email
+		const count = emailCount.get(email) || 0
+		emailCount.set(email, count + 1)
+
+		if (count > 0) {
+			// Add prefix for duplicates (1st duplicate gets "1", 2nd gets "2", etc.)
+			return {
+				...user,
+				email: `${count}${email}`,
+			}
+		}
+
+		return user
+	})
+}
+
+export function findDuplicateEmails(users: Array<{ email: string }>): string[] {
+	const emailCount = new Map<string, number>()
+
+	for (const user of users) {
+		emailCount.set(user.email, (emailCount.get(user.email) || 0) + 1)
+	}
+
+	return Array.from(emailCount.entries())
+		.filter(([_, count]) => count > 1)
+		.map(([email]) => email)
+}
