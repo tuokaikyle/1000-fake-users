@@ -54,6 +54,6 @@ function createRandomUser(): User {
 	}
 }
 
-const fakePersonData = faker.helpers.multiple(createRandomUser, { count: 1000 })
-const csv = Papa.unparse(fakePersonData)
+const fakeUserData = faker.helpers.multiple(createRandomUser, { count: 1000 })
+const csv = Papa.unparse(fakeUserData)
 fs.writeFileSync('1000-fake-users-usa.csv', csv)
