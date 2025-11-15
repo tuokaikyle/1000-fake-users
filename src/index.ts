@@ -10,7 +10,7 @@ function createRandomUser(): User {
 	const username = faker.person.firstName(sex) // allow duplidates, can tell sex
 	const password = faker.internet.password()
 	const dob = faker.date.birthdate({ mode: 'year', min: 1980, max: 2005 }).toISOString().split('T')[0] as string
-	const email = faker.internet.email({ firstName: username }) // low chance of duplicates, then use addPrefixToDuplicateEmails
+	const email = faker.internet.email({ firstName: username }) // low chance of duplicates, apply addPrefixToDuplicateEmails below
 	// const email = faker.internet.email({ firstName: username, lastName: id.split('-')[0] }) // low chance of duplicates, then use addPrefixToDuplicateEmails
 	// faker.helpers.uniqueArray(faker.internet.email, 1000); // no duplicates
 
