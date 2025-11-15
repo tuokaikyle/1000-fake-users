@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker'
 import { bloodTypeWeighted, MBTI_TYPES, relationshipStatusWeighted, type User } from './types'
-import { addPrefixToDuplicateEmails, findDuplicateEmails, getNormalDistributionData, getZodiacSign } from './utils'
+import { addPrefixToDuplicateEmails, getNormalDistributionData, getZodiacSign } from './utils'
 import fs from 'fs'
 import Papa from 'papaparse'
 
