@@ -10,7 +10,7 @@ export const generateNormal = (mean: number, stdDev: number): number => {
 
 export const getNormalDistributionData = (
 	sex: SexType,
-	usa?: boolean,
+	country?: string,
 ): { height: number | string; weight: number | string } => {
 	let height: number | string
 	let weight: number | string
@@ -33,7 +33,7 @@ export const getNormalDistributionData = (
 		weight = Math.max(40, Math.min(110, weight))
 	}
 
-	if (usa) {
+	if (country === 'usa') {
 		height = cmToFeetString(height)
 		weight = kgToPounds(weight)
 	}
@@ -112,3 +112,11 @@ export function findDuplicateEmails(users: Array<{ email: string }>): string[] {
 		.filter(([_, count]) => count > 1)
 		.map(([email]) => email)
 }
+
+const common50raw = `1-10	王	李	张	刘	陈	杨	黄	赵	吴	周
+11-20	徐	孙	马	朱	胡	郭	何	林	罗	高
+21-30	郑	梁	谢	宋	唐	许	韩	邓	冯	曹
+31-40	彭	曾	肖	田	董	潘	袁	蔡	蒋	余
+41-50	于	杜	叶	程	魏	苏	吕	丁	任	卢`
+
+export const commonFamilyNames = common50raw.match(/[\u4e00-\u9fa5]/g) as Array<string>
