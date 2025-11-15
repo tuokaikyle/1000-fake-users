@@ -13,21 +13,13 @@ To install dependencies:
 bun install
 ```
 
-To run:
-
-```bash
-bun run src/index.ts // to produce 1000-fake-users.csv
-bun run src/usa.ts // to produce 1000-fake-users-usa.csv
-bun run src/china.ts // to produce 1000-fake-users-china.csv
-```
-
 ## 1000-fake-users
 
 ```bash
 bun run src/index.ts
 ```
 
-The universal file without being localized.
+Generic user data without being localized.
 
 | Attributes         | Description                                     |
 | ------------------ | ----------------------------------------------- |
@@ -58,7 +50,7 @@ Localized, different from _1000-fake-users_ in the following:
 | Attributes      | Description                                      |
 | --------------- | ------------------------------------------------ |
 | email           | no duplicates, contains first name and last name |
-| firstname       | has firstname. can tell sex                      |
+| firstname       | has firstname, can tell sex                      |
 | lastname        | has lastname                                     |
 | gender          | male, female, other                              |
 | dob             | US styled, has range, but no normalization       |
@@ -119,10 +111,10 @@ const gender = faker.helpers.weightedArrayElement([
 ## Todos:
 
 [x]us, china emails can have duplicates  
-[ ]add empty values
-[x]中文用户名方案 - 汉字数字混合？
-[ ]海外地区方案 包含所有国家？
-[ ]re arrange column order
+[ ]add empty values  
+[x]中文用户名方案 - 汉字数字混合？  
+[ ]海外地区方案 包含所有国家？  
+[ ]re arrange column order  
 [ ]add test
 
 ## Change logs
