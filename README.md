@@ -110,12 +110,12 @@ const gender = faker.helpers.weightedArrayElement([
 
 ## Todos:
 
-- [x]us, china emails can have duplicates
-- [ ]add empty values
-- [x]中文用户名方案 - 汉字数字混合？
-- [ ]海外地区方案 包含所有国家？
-- [ ]re arrange column order
-- [ ]add test
+- [x] us, china emails can have duplicates
+- [ ] add empty values
+- [x] 中文用户名方案 - 汉字数字混合？
+- [ ] 海外地区方案 包含所有国家？
+- [ ] re arrange column order
+- [ ] add test
 
 ## Change logs
 
